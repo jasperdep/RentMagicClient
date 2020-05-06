@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/Users/jasper/.dotnet/store/|arch|/|tfm|",
+      "/Users/jasper/.nuget/packages"
+    ]
+  }
+}
