@@ -1,0 +1,75 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/jasper/Documents/School/jaar4/stage/onderzoek/code/RentMagicClient/RentMagicClient/RentMagicClient.csproj": {}
+  },
+  "projects": {
+    "/Users/jasper/Documents/School/jaar4/stage/onderzoek/code/RentMagicClient/RentMagicClient/RentMagicClient.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/jasper/Documents/School/jaar4/stage/onderzoek/code/RentMagicClient/RentMagicClient/RentMagicClient.csproj",
+        "projectName": "RentMagicClient",
+        "projectPath": "/Users/jasper/Documents/School/jaar4/stage/onderzoek/code/RentMagicClient/RentMagicClient/RentMagicClient.csproj",
+        "packagesPath": "/Users/jasper/.nuget/packages/",
+        "outputPath": "/Users/jasper/Documents/School/jaar4/stage/onderzoek/code/RentMagicClient/RentMagicClient/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/jasper/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "System.Collections": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
