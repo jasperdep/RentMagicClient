@@ -21,7 +21,8 @@ namespace RentMagicClient
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddAuthentication(config => {
+            services.AddAuthentication(config =>
+            {
                 // We check the cookie to confirm that we are authenticated
                 config.DefaultAuthenticateScheme = "ClientCookie";
                 // When we sign in we will deal out a cookie
@@ -35,7 +36,7 @@ namespace RentMagicClient
                     config.ClientId = "f0f36c11-6dd4-425d-9abe-9a69df19989f";
                     config.ClientSecret = "2pYS7RWBY77pYDmRNBlIeV5KJZ505xfus66Nbczhxq7A12e7j9";
                     config.CallbackPath = "/login-unit4";
-                    config.AuthorizationEndpoint = "https://sandbox.api.online.unit4.nl/V21/OAuth/Authorize";
+                    config.AuthorizationEndpoint = "https://sandbox.api.online.unit4.nl/V21/OAuth/Authorize&scope=http%3A%2F%2FUNIT4.Multivers.API%2FWeb%2FWebApi%2F%2A";
                     config.TokenEndpoint = "https://sandbox.api.online.unit4.nl/V21/OAuth/Token";
 
                     config.SaveTokens = true;
@@ -52,6 +53,16 @@ namespace RentMagicClient
                     config.SaveTokens = true;
                 });
 
+                //.AddOAuth("Dynamics", config =>
+                //{
+                //    config.ClientId = "b8fe0fb4-9330-49c1-93f0-2cfcdad2a010";
+                //    config.ClientSecret = "5_xAl6N6cnw_7s2W5-oSX9-52y4f~3cM0~";
+                //    config.CallbackPath = "/login-dynamics";
+                //    config.AuthorizationEndpoint = "https://login.microsoftonline.com/common/oauth2/authorize";
+
+                //    config.SaveTokens = true;
+                //});
+
             services.AddHttpClient();
 
             services.AddControllersWithViews();
@@ -64,7 +75,11 @@ namespace RentMagicClient
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            else
+            {
+                app.UseExceptionHandler("/Error");
+                app.UseHsts();
+            }
 
             app.UseRouting();
 
