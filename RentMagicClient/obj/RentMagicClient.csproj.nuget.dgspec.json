@@ -14,7 +14,7 @@
         "outputPath": "/Users/jasper/Documents/School/jaar4/stage/onderzoek/code/RentMagicClient/RentMagicClient/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/jasper/.config/NuGet/NuGet.Config"
+          "/Users/jasper/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -36,9 +36,17 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
+            },
+            "System.Collections": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [

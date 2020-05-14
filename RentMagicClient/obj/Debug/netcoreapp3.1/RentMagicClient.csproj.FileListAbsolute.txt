@@ -20,7 +20,6 @@
 /Users/jasper/Documents/School/jaar4/stage/onderzoek/code/RentMagicClient/RentMagicClient/obj/Debug/netcoreapp3.1/RentMagicClient.TagHelpers.output.cache
 /Users/jasper/Documents/School/jaar4/stage/onderzoek/code/RentMagicClient/RentMagicClient/obj/Debug/netcoreapp3.1/RentMagicClient.RazorCoreGenerate.cache
 /Users/jasper/Documents/School/jaar4/stage/onderzoek/code/RentMagicClient/RentMagicClient/obj/Debug/netcoreapp3.1/Razor/Views/Home/Index.cshtml.g.cs
-/Users/jasper/Documents/School/jaar4/stage/onderzoek/code/RentMagicClient/RentMagicClient/obj/Debug/netcoreapp3.1/Razor/Views/Home/Secret.cshtml.g.cs
 /Users/jasper/Documents/School/jaar4/stage/onderzoek/code/RentMagicClient/RentMagicClient/obj/Debug/netcoreapp3.1/RentMagicClient.RazorTargetAssemblyInfo.cache
 /Users/jasper/Documents/School/jaar4/stage/onderzoek/code/RentMagicClient/RentMagicClient/obj/Debug/netcoreapp3.1/RentMagicClient.RazorTargetAssemblyInfo.cs
 /Users/jasper/Documents/School/jaar4/stage/onderzoek/code/RentMagicClient/RentMagicClient/obj/Debug/netcoreapp3.1/RentMagicClient.Views.pdb
@@ -30,3 +29,6 @@
 /Users/jasper/Documents/School/jaar4/stage/onderzoek/code/RentMagicClient/RentMagicClient/obj/Debug/netcoreapp3.1/RentMagicClient.dll
 /Users/jasper/Documents/School/jaar4/stage/onderzoek/code/RentMagicClient/RentMagicClient/obj/Debug/netcoreapp3.1/RentMagicClient.pdb
 /Users/jasper/Documents/School/jaar4/stage/onderzoek/code/RentMagicClient/RentMagicClient/obj/Debug/netcoreapp3.1/RentMagicClient.genruntimeconfig.cache
+/Users/jasper/Documents/School/jaar4/stage/onderzoek/code/RentMagicClient/RentMagicClient/obj/Debug/netcoreapp3.1/Razor/Views/Home/Exact.cshtml.g.cs
+/Users/jasper/Documents/School/jaar4/stage/onderzoek/code/RentMagicClient/RentMagicClient/bin/Debug/netcoreapp3.1/System.Net.Http.Formatting.dll
+/Users/jasper/Documents/School/jaar4/stage/onderzoek/code/RentMagicClient/RentMagicClient/bin/Debug/netcoreapp3.1/Newtonsoft.Json.Bson.dll
