@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
@@ -23,6 +24,17 @@ namespace RentMagicClient
 
             return "";
         }
+
+        //public async Task<string> PostCustomers(HttpContext httpContext)
+        //{
+        //    var token = await httpContext.GetTokenAsync("access_token");
+
+        //    var client = new ExactOnlineClient();
+
+        //    await client.PostRentMagicCustomerAsync("", token);
+
+        //    return "";
+        //}
 
         public async Task<string> RefreshAccessToken(HttpContext httpcontext, HttpClient refreshTokenClient)
         {

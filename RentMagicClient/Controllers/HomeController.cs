@@ -49,6 +49,8 @@ namespace OauthClient.Controllers
 
             await service.GetCustomers(httpcontext);
 
+            //await service.PostCustomers(httpcontext);
+
             await service.RefreshAccessToken(httpcontext, refreshTokenClient);
 
             return View();
