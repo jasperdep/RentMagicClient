@@ -12,17 +12,17 @@ namespace RentMagicClient
 {
     public class ExactOnlineService
     {
-        public async Task<string> GetCustomers(HttpContext httpcontext)
+        public async Task<List<Customer>> GetCustomers(HttpContext httpcontext)
         {
             var token = await httpcontext.GetTokenAsync("access_token");
 
             var client = new ExactOnlineClient();
 
-            await client.GetExactOnlineCustomerAsync("", token);
+            var customers = await client.GetExactOnlineCustomerAsync("", token);
 
             //await RefreshAccessToken(httpcontext, refreshTokenClient);
 
-            return "";
+            return customers;
         }
 
         //public async Task<string> PostCustomers(HttpContext httpContext)

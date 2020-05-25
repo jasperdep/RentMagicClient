@@ -47,13 +47,15 @@ namespace OauthClient.Controllers
 
             var service = new ExactOnlineService();
 
-            await service.GetCustomers(httpcontext);
+            await service.RefreshAccessToken(httpcontext, refreshTokenClient);
+
+            var customers = await service.GetCustomers(httpcontext);
 
             //await service.PostCustomers(httpcontext);
 
-            await service.RefreshAccessToken(httpcontext, refreshTokenClient);
+            //await service.RefreshAccessToken(httpcontext, refreshTokenClient);
 
-            return View();
+            return View(customers);
         }
     }
 }
