@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+
 namespace RentMagicClient
 {
     public class ExactOnlineCustomer
@@ -27,5 +30,17 @@ namespace RentMagicClient
 
         public string Postcode { get; set; }
 
+    }
+
+    public class RootObject
+    {
+        [JsonProperty("d")]
+        public Result D { get; set; }
+    }
+
+    public class Result
+    {
+        [JsonProperty("results")]
+        public List<ExactOnlineCustomer> Results { get; set; }
     }
 }

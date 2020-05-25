@@ -25,6 +25,17 @@ namespace RentMagicClient
             return "";
         }
 
+        //public async Task<string> PostCustomers(HttpContext httpContext)
+        //{
+        //    var token = await httpContext.GetTokenAsync("access_token");
+
+        //    var client = new ExactOnlineClient();
+
+        //    await client.PostRentMagicCustomerAsync("", token);
+
+        //    return "";
+        //}
+
         public async Task<string> RefreshAccessToken(HttpContext httpcontext, HttpClient refreshTokenClient)
         {
             var refreshToken = await httpcontext.GetTokenAsync("refresh_token");
