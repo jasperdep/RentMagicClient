@@ -13,13 +13,14 @@ using RentMagicClient;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace OauthClient.Controllers
+namespace RentMagicClient.Controllers
 {
-    public class HomeController : Controller
+    public class Unit4Controller : Controller
     {
+
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public HomeController(IHttpClientFactory httpClientFactory)
+        public Unit4Controller(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
@@ -31,7 +32,7 @@ namespace OauthClient.Controllers
         }
 
         [Authorize]
-        public async Task<IActionResult> Exact()
+        public async Task<IActionResult> Overzicht()
         {
             var httpcontext = HttpContext;
 
@@ -45,7 +46,7 @@ namespace OauthClient.Controllers
 
             //await HttpContext.SignInAsync("ClientCookie", authInfo.Principal, authInfo.Properties);
 
-            var service = new ExactOnlineService();
+            var service = new Unit4Service();
 
             await service.RefreshAccessToken(httpcontext, refreshTokenClient);
 
