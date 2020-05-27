@@ -1,1 +1,55 @@
-﻿<h1>Unit4 Overzicht Page</h1>
+﻿@using RentMagicClient;
+@model List<Customer>;
+
+<head>
+    <style>
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<h1>Unit4 Overzicht</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Addressline</th>
+        <th>Email</th>
+        <th>Country</th>
+        <th>StateName</th>
+        <th>Language</th>
+        <th>City</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Postcode</th>
+    </tr>
+    @foreach (var customer in Model)
+    {
+        <tr>
+            <td>@customer.CustomerID</td>
+            <td>@customer.HouseNumber</td>
+            <td>@customer.Email</td>
+            <td>@customer.CountryID</td>
+            <td>@customer.State</td>
+            <td>@customer.LanguageID</td>
+            <td>@customer.City</td>
+            <td>@customer.CompanyName</td>
+            <td>@customer.Tel</td>
+            <td>@customer.ZipCode</td>
+        </tr>
+    }
+</table>
