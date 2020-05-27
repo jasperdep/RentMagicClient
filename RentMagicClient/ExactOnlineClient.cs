@@ -46,32 +46,32 @@ namespace RentMagicClient
             return customers;
         }
 
-        //public async Task<HttpStatusCode> PostRentMagicCustomerAsync(string path, string token)
-        //{
-        //    var postData = new
-        //    {
-        //        City = "Amsterdam",
-        //        Name = "Vlaggenmakers",
-        //        Country = "NL",
-        //        Email = "vlag@vlag.nl",
-        //        AddressLine1 = "grote straat 7",
-        //        Language = "Nederlands",
-        //        PostCode = "3847AB",
-        //        Status = "C"
-        //    };
+        public async Task<string> PostRentMagicCustomerAsync(string path, string token, Customer customer)
+        {
 
-        //    var serializedRequest = JsonConvert.SerializeObject(postData);
+            var eoCustomer = new ExactOnlineCustomer
+            {
+               City = "Terneuzen",
+               Name = "Cappendijk",
+               Country = "NL",
+               Email = "info@cappendijk.com",
+               Phone = "0612345678",
+               Postcode = "3456 AB",
+               AddressLine1 = "Hoofdstraat 5",
+               State = "ZL",
+               Language = "NL",
+               Type = "C"
+            };
 
-        //    var requestBody = new StringContent(serializedRequest);
-        //    client.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
-        //    requestBody.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            var stringContent = new StringContent(JsonConvert.SerializeObject(eoCustomer), Encoding.UTF8, "application/json");
+ 
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
 
-        //    using (var response = await client.PostAsync("https://start.exactonline.nl/api/v1/2741128/bulk/crm/Accounts", requestBody))
-        //    {
-        //        return response.StatusCode;
-        //    }
+            await client.PostAsync("https://start.exactonline.nl/api/v1/2741128/crm/Accounts", stringContent);
 
-        //}
+            return "";
+        }
 
         private List<Customer> MapCustomers(List<ExactOnlineCustomer> exactOnlineCustomers)
         {
@@ -93,7 +93,6 @@ namespace RentMagicClient
 
             });
         }
-
 
 
         //public async Task<string> GetCurrentDivision(string token)

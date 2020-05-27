@@ -31,7 +31,7 @@ namespace OauthClient.Controllers
         }
 
         [Authorize]
-        public async Task<IActionResult> Exact()
+        public async Task<IActionResult> Overzicht()
         {
             var httpcontext = HttpContext;
 
@@ -49,6 +49,8 @@ namespace OauthClient.Controllers
 
             await service.RefreshAccessToken(httpcontext, refreshTokenClient);
 
+            //await service.PostCustomers(httpcontext);
+
             var customers = await service.GetCustomers(httpcontext);
 
             //await service.PostCustomers(httpcontext);
@@ -57,5 +59,40 @@ namespace OauthClient.Controllers
 
             return View(customers);
         }
+
+        public IActionResult Toevoegen()
+        {
+
+            return View();
+            
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> SubmitForm(Customer obj)
+        {
+            var customer = obj;
+
+            var httpcontext = HttpContext;
+
+            var service = new ExactOnlineService();
+
+            await service.PostCustomers(httpcontext, customer);
+
+            return Redirect("overzicht");
+         }
+
+        //[HttpPost]
+        //public async Task<IActionResult> Toevoegen()
+        //{
+        //    var httpcontext = HttpContext;
+
+        //    var service = new ExactOnlineService();
+
+        //    await service.PostCustomers(httpcontext);
+
+        //    return Redirect("overzicht");
+
+        //}
     }
 }

@@ -36,7 +36,7 @@ namespace RentMagicClient
                     config.ClientId = "f0f36c11-6dd4-425d-9abe-9a69df19989f";
                     config.ClientSecret = "2pYS7RWBY77pYDmRNBlIeV5KJZ505xfus66Nbczhxq7A12e7j9";
                     config.CallbackPath = "/login-unit4";
-                    config.AuthorizationEndpoint = "https://sandbox.api.online.unit4.nl/V21/OAuth/Authorize&scope=http%3A%2F%2FUNIT4.Multivers.API%2FWeb%2FWebApi%2F%2A";
+                    config.AuthorizationEndpoint = "https://sandbox.api.online.unit4.nl/V21/OAuth/Authorize";
                     config.TokenEndpoint = "https://sandbox.api.online.unit4.nl/V21/OAuth/Token";
 
                     config.SaveTokens = true;

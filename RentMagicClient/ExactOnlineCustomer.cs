@@ -16,6 +16,8 @@ namespace RentMagicClient
 
         public string StateName { get; set; }
 
+        public string State { get; set; }
+
         public string Language { get; set; }
 
         public string City { get; set; }
@@ -29,6 +31,8 @@ namespace RentMagicClient
         public string Phone { get; set; }
 
         public string Postcode { get; set; }
+
+        public string Type { get; set; }
 
     }
 
