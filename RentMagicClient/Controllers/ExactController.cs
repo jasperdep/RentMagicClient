@@ -15,11 +15,11 @@ using RentMagicClient;
 
 namespace OauthClient.Controllers
 {
-    public class HomeController : Controller
+    public class ExactController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public HomeController(IHttpClientFactory httpClientFactory)
+        public ExactController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }

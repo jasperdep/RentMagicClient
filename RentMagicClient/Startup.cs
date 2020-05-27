@@ -28,7 +28,7 @@ namespace RentMagicClient
                 // When we sign in we will deal out a cookie
                 config.DefaultSignInScheme = "ClientCookie";
                 // use this to check if we are allowed to do something
-                config.DefaultChallengeScheme = "Exact";
+                config.DefaultChallengeScheme = "Unit4";
             })
                 .AddCookie("ClientCookie")
                 .AddOAuth("Unit4", config =>
@@ -38,6 +38,7 @@ namespace RentMagicClient
                     config.CallbackPath = "/login-unit4";
                     config.AuthorizationEndpoint = "https://sandbox.api.online.unit4.nl/V21/OAuth/Authorize";
                     config.TokenEndpoint = "https://sandbox.api.online.unit4.nl/V21/OAuth/Token";
+                    config.Scope.Add("http://UNIT4.Multivers.API/Web/WebApi/*");
 
                     config.SaveTokens = true;
                 })
