@@ -58,5 +58,31 @@ namespace RentMagicClient.Controllers
 
             return View(customers);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("CompanyName,FirstName,LastName,Salutation,Street,HouseNumber,HouseNumberAddition,Email,CountryID,Tel,LanguageID,City,ZipCode,State")] Customer customer)
+        {
+
+            if (ModelState.IsValid)
+            {
+                var httpcontext = HttpContext;
+
+                var cust = customer;
+
+                var service = new Unit4Service();
+
+                await service.PostCustomers(httpcontext, customer);
+
+                return RedirectToAction(nameof(Overzicht));
+            }
+            return View(customer);
+        }
     }
 }

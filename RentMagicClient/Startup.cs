@@ -42,7 +42,7 @@ namespace RentMagicClient
                 config.DefaultSignInScheme = "ClientCookie";
                 //config.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 // use this to check if we are allowed to do something
-                config.DefaultChallengeScheme = "Exact";
+                config.DefaultChallengeScheme = "Unit4";
             })
                 .AddCookie("ClientCookie")
                 .AddOAuth("Unit4", config =>
