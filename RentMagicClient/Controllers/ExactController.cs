@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -13,7 +14,7 @@ using RentMagicClient;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace OauthClient.Controllers
+namespace RentMagicClient.Controllers
 {
     public class ExactController : Controller
     {
@@ -27,6 +28,11 @@ namespace OauthClient.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
+            Response.Cookies.Append("ClientCookie", "", new CookieOptions()
+            {
+                Expires = DateTime.Now.AddDays(-1)
+            });
+
             return View();
         }
 
@@ -60,27 +66,52 @@ namespace OauthClient.Controllers
             return View(customers);
         }
 
-        public IActionResult Toevoegen()
+        public IActionResult Create()
         {
 
+            //if(Request.Cookies["ClientCookie"] != null)
+            //{
+            //    Response.Cookies["ClientCookie"].Expires
+            //}
+
             return View();
-            
         }
 
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> SubmitForm(Customer obj)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("CompanyName,FirstName,LastName,Salutation,Street,HouseNumber,HouseNumberAddition,Email,CountryID,Tel,LanguageID,City,ZipCode,State")] Customer customer)
         {
-            var customer = obj;
 
-            var httpcontext = HttpContext;
+            if (ModelState.IsValid)
+            {
+                var httpcontext = HttpContext;
 
-            var service = new ExactOnlineService();
+                var cust = customer;
 
-            await service.PostCustomers(httpcontext, customer);
+                var service = new ExactOnlineService();
 
-            return Redirect("overzicht");
-         }
+                await service.PostCustomers(httpcontext, customer);
+
+                return RedirectToAction(nameof(Overzicht));
+            }
+            return View(customer);
+        }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Toevoegen(Customer obj)
+        //{
+        //    var customer = obj;
+
+        //    var httpcontext = HttpContext;
+
+        //    var service = new ExactOnlineService();
+
+        //    await service.PostCustomers(httpcontext, customer);
+
+        //    return Redirect("overzicht");
+        // }
 
         //[HttpPost]
         //public async Task<IActionResult> Toevoegen()

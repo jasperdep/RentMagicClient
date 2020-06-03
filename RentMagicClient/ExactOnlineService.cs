@@ -46,8 +46,8 @@ namespace RentMagicClient
             {
                 ["grant_type"] = "refresh_token",
                 ["refresh_token"] = refreshToken,
-                ["client_id"] = "f458b220-7c45-45fd-a352-97a09246426d",
-                ["client_secret"] = "yJF2o6BJEqKO"
+                ["client_id"] = "59f52b9b-3d68-4ff2-870a-b170fe5574ab",
+                ["client_secret"] = "pbOUJND3kM4F"
             };
 
             var request = new HttpRequestMessage(HttpMethod.Post, "https://start.exactonline.nl/api/oauth2/token")

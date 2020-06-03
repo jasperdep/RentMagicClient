@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using Newtonsoft.Json;
 using AutoMapper;
 using Newtonsoft.Json.Linq;
-using OauthClient.Controllers;
+using RentMagicClient.Controllers;
 using RentMagicClient;
 using System.Net;
 
