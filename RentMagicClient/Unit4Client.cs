@@ -70,7 +70,9 @@ namespace RentMagicClient
                 LanguageID = unit4Customers.languageId,
                 Street = unit4Customers.street2,
                 Tel = unit4Customers.telephone,
-                ZipCode = unit4Customers.zipCode
+                CountryID = unit4Customers.countryId,
+                ZipCode = unit4Customers.zipCode,
+                FullName = unit4Customers.contactPerson
             });
         }
 
@@ -90,13 +92,14 @@ namespace RentMagicClient
                 customerId = customer.CustomerID,
                 city = customer.City,
                 name = customer.CompanyName,
-                //Country = customer.CountryID,
                 email = customer.Email,
-                street2 = customer.HouseNumber,
+                countryId = customer.CountryID,
+                street2 = customer.Street + " " + customer.HouseNumber + " " + customer.HouseNumberAddition,
                 languageId = customer.LanguageID,
                 telephone = customer.Tel,
                 zipCode = customer.ZipCode,
-                shortName = newShortName
+                shortName = newShortName,
+                person = customer.Salutation + " " + customer.FirstName + " " + customer.LastName
             };
 
             return unit4Customer;

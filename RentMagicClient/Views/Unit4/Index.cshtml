@@ -1,5 +1,10 @@
-﻿<h1>Unit4 Home Page</h1>
+﻿@{
+    ViewBag.Title = "Index | Unit4 Multivers";
+    Layout = "../_Layout.cshtml";
+}
+
+<h1>Unit4 Home Page</h1>
 <p>
-    <a asp-action="Overzicht">Index</a>
-    <a asp-action="Create">Add</a>
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Overzicht", "Unit4")'">Customers Unit4 Ophalen</button>
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Create", "Unit4")'">Customers Versturen</button>
 </p>

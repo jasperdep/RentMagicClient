@@ -11,6 +11,8 @@ namespace RentMagicClient
 
         public string LastName { get; set; }
 
+        public string FullName { get; set; }
+
         public string Salutation { get; set; }
 
         public string Street { get; set; }
