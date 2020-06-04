@@ -19,6 +19,8 @@ namespace RentMagicClient
 
         public string name { get; set; }
 
+        public string person { get; set; }
+
         public string contactPerson { get; set; }
 
         public string telephone { get; set; }
@@ -26,6 +28,8 @@ namespace RentMagicClient
         public string homepage { get; set; }
 
         public string zipCode { get; set; }
+
+        public string shortName { get; set; }
     }
 
     public class RootUnit4

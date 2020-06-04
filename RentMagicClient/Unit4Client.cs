@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using Newtonsoft.Json;
 using AutoMapper;
 using Newtonsoft.Json.Linq;
-using OauthClient.Controllers;
+using RentMagicClient.Controllers;
 using RentMagicClient;
 using System.Net;
 
@@ -40,6 +40,23 @@ namespace RentMagicClient
             return customers;
         }
 
+        public async Task<string> PostRentMagicCustomerAsync(string path, string token, Customer customer)
+        {
+
+            Unit4Customer unit4Customer = null;
+
+            unit4Customer = MapUnit4Customer(customer);
+
+            var stringContent = new StringContent(JsonConvert.SerializeObject(unit4Customer), Encoding.UTF8, "application/json");
+
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+
+            var result = await client.PostAsync("https://sandbox.api.online.unit4.nl/V21/api/MVL71239/Customer", stringContent);
+
+            return "";
+        }
+
         private List<Customer> MapCustomers(List<Unit4Customer> unit4Customers)
         {
             return unit4Customers.ConvertAll(unit4Customers => new Customer
@@ -53,8 +70,39 @@ namespace RentMagicClient
                 LanguageID = unit4Customers.languageId,
                 Street = unit4Customers.street2,
                 Tel = unit4Customers.telephone,
-                ZipCode = unit4Customers.zipCode
+                CountryID = unit4Customers.countryId,
+                ZipCode = unit4Customers.zipCode,
+                FullName = unit4Customers.contactPerson
             });
+        }
+
+        private Unit4Customer MapUnit4Customer(Customer customer)
+        {
+            string name = customer.CompanyName;
+
+            string noSpace = name.Replace(" ", "");
+
+            string maxEight = noSpace.Substring(0, 8);
+
+            string newShortName = maxEight.ToUpper();
+
+
+            Unit4Customer unit4Customer = new Unit4Customer()
+            {
+                customerId = customer.CustomerID,
+                city = customer.City,
+                name = customer.CompanyName,
+                email = customer.Email,
+                countryId = customer.CountryID,
+                street2 = customer.Street + " " + customer.HouseNumber + " " + customer.HouseNumberAddition,
+                languageId = customer.LanguageID,
+                telephone = customer.Tel,
+                zipCode = customer.ZipCode,
+                shortName = newShortName,
+                person = customer.Salutation + " " + customer.FirstName + " " + customer.LastName
+            };
+
+            return unit4Customer;
         }
     }
 }
