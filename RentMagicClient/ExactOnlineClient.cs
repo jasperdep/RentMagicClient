@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using Newtonsoft.Json;
 using AutoMapper;
 using Newtonsoft.Json.Linq;
-using OauthClient.Controllers;
+using RentMagicClient.Controllers;
 using System.Net;
 
 namespace RentMagicClient
@@ -35,7 +35,7 @@ namespace RentMagicClient
             client.DefaultRequestHeaders.Add("Accept", "application/json");
 
             //Rootobject container = null;
-            var result = await client.GetAsync("https://start.exactonline.nl/api/v1/2741128/crm/Accounts?$select=ID,AddressLine1,City,Country,Created,Email,Language,Name,Phone,Postcode,StateName,Website");
+            var result = await client.GetAsync("https://start.exactonline.nl/api/v1/2757837/crm/Accounts?$select=ID,AddressLine1,City,Country,Created,Email,Language,Name,Phone,Postcode,StateName,Website");
             if (result.IsSuccessStatusCode)
             {
                 //exactonlinecustomer = await response.Content.ReadAsAsync<ExactOnlineCustomer>();
@@ -46,32 +46,22 @@ namespace RentMagicClient
             return customers;
         }
 
-        //public async Task<HttpStatusCode> PostRentMagicCustomerAsync(string path, string token)
-        //{
-        //    var postData = new
-        //    {
-        //        City = "Amsterdam",
-        //        Name = "Vlaggenmakers",
-        //        Country = "NL",
-        //        Email = "vlag@vlag.nl",
-        //        AddressLine1 = "grote straat 7",
-        //        Language = "Nederlands",
-        //        PostCode = "3847AB",
-        //        Status = "C"
-        //    };
+        public async Task<string> PostRentMagicCustomerAsync(string path, string token, Customer customer)
+        {
 
-        //    var serializedRequest = JsonConvert.SerializeObject(postData);
+            ExactOnlineCustomer exactOnlineCustomer = null;
 
-        //    var requestBody = new StringContent(serializedRequest);
-        //    client.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
-        //    requestBody.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            exactOnlineCustomer = MapExactOnlineCustomer(customer);
 
-        //    using (var response = await client.PostAsync("https://start.exactonline.nl/api/v1/2741128/bulk/crm/Accounts", requestBody))
-        //    {
-        //        return response.StatusCode;
-        //    }
+            var stringContent = new StringContent(JsonConvert.SerializeObject(exactOnlineCustomer), Encoding.UTF8, "application/json");
+ 
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
 
-        //}
+            var result = await client.PostAsync("https://start.exactonline.nl/api/v1/2757837/crm/Accounts", stringContent);
+
+            return "";
+        }
 
         private List<Customer> MapCustomers(List<ExactOnlineCustomer> exactOnlineCustomers)
         {
@@ -94,6 +84,24 @@ namespace RentMagicClient
             });
         }
 
+        private ExactOnlineCustomer MapExactOnlineCustomer(Customer customer)
+        {
+            ExactOnlineCustomer exactOnlineCustomer = new ExactOnlineCustomer()
+            {
+                ID = customer.CustomerID,
+                City = customer.City,
+                Name = customer.CompanyName,
+                Country = customer.CountryID,
+                Email = customer.Email,
+                AddressLine1 = customer.HouseNumber,
+                Language = customer.LanguageID,
+                Phone = customer.Tel,
+                Postcode = customer.ZipCode,
+                State = customer.State
+            };
+
+            return exactOnlineCustomer;
+        }
 
 
         //public async Task<string> GetCurrentDivision(string token)
