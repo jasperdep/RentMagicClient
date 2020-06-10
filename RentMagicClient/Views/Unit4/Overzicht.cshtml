@@ -1,45 +1,51 @@
 ﻿@model List<Customer>;
 
 @{
-    ViewBag.Title = "Create | Unit4 Overzicht";
+    ViewBag.Title = "Overzicht | Unit4 Multivers";
     Layout = "../_Layout.cshtml";
 }
 
 
-<h1>Unit4 Overzicht</h1>
+<div class="content-table">
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Contact Person</th>
-            <th>Email</th>
-            <th>Country</th>
-            <th>StateName</th>
-            <th>Language</th>
-            <th>City</th>
-            <th>Addressline</th>
-            <th>Phone</th>
-            <th>Postcode</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var customer in Model)
-        {
+    <div class="table-title">
+        <h1>Unit4 Overzicht</h1>
+        <button type="button" class="btn btn-rentmagic" onclick="location.href='@Url.Action("Create", "Unit4")'">Nieuwe Customer</button>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
             <tr>
-                <td>@customer.CustomerID</td>
-                <td>@customer.CompanyName</td>
-                <td>@customer.FullName</td>
-                <td>@customer.Email</td>
-                <td>@customer.CountryID</td>
-                <td>@customer.State</td>
-                <td>@customer.LanguageID</td>
-                <td>@customer.City</td>
-                <td>@customer.HouseNumber</td>
-                <td>@customer.Tel</td>
-                <td>@customer.ZipCode</td>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Contact Person</th>
+                <th>Email</th>
+                <th>Country</th>
+                <th>StateName</th>
+                <th>Language</th>
+                <th>City</th>
+                <th>Addressline</th>
+                <th>Phone</th>
+                <th>Postcode</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model)
+            {
+                <tr>
+                    <td>@customer.CustomerID</td>
+                    <td>@customer.CompanyName</td>
+                    <td>@customer.FullName</td>
+                    <td>@customer.Email</td>
+                    <td>@customer.CountryID</td>
+                    <td>@customer.State</td>
+                    <td>@customer.LanguageID</td>
+                    <td>@customer.City</td>
+                    <td>@customer.HouseNumber</td>
+                    <td>@customer.Tel</td>
+                    <td>@customer.ZipCode</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

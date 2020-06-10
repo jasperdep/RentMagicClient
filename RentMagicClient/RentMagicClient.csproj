@@ -20,6 +20,8 @@
     <Folder Include="Views\Exact\" />
     <Folder Include="Controllers\" />
     <Folder Include="Views\Unit4\" />
+    <Folder Include="Views\Home\" />
+    <Folder Include="css\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\ViewImport.cshtml" />

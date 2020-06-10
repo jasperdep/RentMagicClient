@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home | Prototype";
+    Layout = "../_Layout.cshtml";
+}
+
+<div class="container">
+
+    <div class="title">
+        <h1>Integraties</h1>
+    </div>
+
+    <div class="content">
+        <div class="subcontent">
+            <h2>API Key</h2>
+            <input class="form-control" value="zaCELgL.0imfnc8mVLWwsAawjYr4Rx-Af50DDqtlx">
+        </div>
+        <div class="subcontent">
+            <h2>Nieuwe Koppeling</h2>
+            <p>
+                <button type="button" class="btn btn-rentmagic" onclick="location.href='@Url.Action("Index", "Exact")'">Exact Online</button>
+                <button type="button" class="btn btn-rentmagic" onclick="location.href='@Url.Action("Index", "Unit4")'">Unit4 Multivers</button>
+            </p>
+        </div>
+    </div>
+
+</div>
