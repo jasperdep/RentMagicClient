@@ -107,3 +107,24 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+img {
+    float: left;
+    object-fit: cover;
+    height: auto;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-body {
+    top: -20px;
+}
+
+.card {
+    border: 1px solid #dee2e6 !important;
+}
+
+.special-title {
+    margin-bottom: 20px;
+}

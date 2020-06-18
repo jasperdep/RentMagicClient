@@ -21,7 +21,7 @@
     <Folder Include="Controllers\" />
     <Folder Include="Views\Unit4\" />
     <Folder Include="Views\Home\" />
-    <Folder Include="css\" />
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\ViewImport.cshtml" />
