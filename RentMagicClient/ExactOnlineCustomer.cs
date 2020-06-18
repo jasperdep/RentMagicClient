@@ -32,7 +32,7 @@ namespace RentMagicClient
 
         public string Postcode { get; set; }
 
-        public string Type { get; set; }
+        public string Status { get; set; }
 
     }
 

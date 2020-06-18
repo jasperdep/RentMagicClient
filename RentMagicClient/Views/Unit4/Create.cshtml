@@ -14,103 +14,101 @@
 </head>
 <body>
 
-    <h4>Create Customer</h4>
-    <hr />
+    <div class="container">
 
-    <form asp-action="create">
-        <div class="form-group">
-            <label asp-for="CompanyName">Company Name</label>
-            <input asp-for="CompanyName" class="form-control" />
-            <span asp-validation-for="CompanyName" class="text-danger"></span>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label asp-for="Email">Email</label>
-                <input asp-for="Email" type="text" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group col-md-6">
-                <label asp-for="Tel">Telephone Number</label>
-                <input asp-for="Tel" type="text" class="form-control" />
-                <span asp-validation-for="Tel" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-2">
-                <label asp-for="Salutation">Salutation</label>
-                <input asp-for="Salutation" type="text" class="form-control" />
-                <span asp-validation-for="Salutation" class="text-danger"></span>
-            </div>
-            <div class="form-group col-md-5">
-                <label asp-for="FirstName">First Name</label>
-                <input asp-for="FirstName" type="text" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group col-md-5">
-                <label asp-for="LastName">Last Name</label>
-                <input asp-for="LastName" type="text" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-8">
-                <label asp-for="Street">Street</label>
-                <input asp-for="Street" type="text" class="form-control" />
-                <span asp-validation-for="Street" class="text-danger"></span>
-            </div>
-            <div class="form-group col-md-2">
-                <label asp-for="HouseNumber">House Number</label>
-                <input asp-for="HouseNumber" type="text" class="form-control" />
-                <span asp-validation-for="HouseNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group col-md-2">
-                <label asp-for="HouseNumberAddition">Addition</label>
-                <input asp-for="HouseNumberAddition" type="text" class="form-control" />
-                <span asp-validation-for="HouseNumberAddition" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-2">
-                <label asp-for="CountryID">Country ID</label>
-                <select asp-for="CountryID" class="form-control">
-                    <option>BE</option>
-                    <option>DE</option>
-                    <option>GB</option>
-                    <option>US</option>
-                </select>
-                <span asp-validation-for="CountryID" class="text-danger"></span>
-            </div>
-            <div class="form-group col-md-2">
-                <label asp-for="LanguageID">Language ID</label>
-                <select asp-for="LanguageID" class="form-control">
-                    <option>NL</option>
-                    <option>D</option>
-                    <option>F</option>
-                    <option>E</option>
-                </select>
-                <span asp-validation-for="LanguageID" class="text-danger"></span>
-            </div>
-            <div class="form-group col-md-4">
-                <label asp-for="City">City</label>
-                <input asp-for="City" type="text" class="form-control" />
-                <span asp-validation-for="City" class="text-danger"></span>
-            </div>
-            <div class="form-group col-md-4">
-                <label asp-for="ZipCode">Zip Code</label>
-                <input asp-for="ZipCode" type="text" class="form-control" />
-                <span asp-validation-for="ZipCode" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="State">State</label>
-            <input asp-for="State" type="text" class="form-control" />
-            <span asp-validation-for="State" class="text-danger"></span>
-        </div>
-        <button type="submit" class="btn btn-primary">Add</button>
-    </form>
+        <h4>Create Customer</h4>
+        <hr />
 
-    <div>
-        <a asp-action="Overzicht">Back to Index</a>
+        <form asp-action="create">
+            <div class="form-group">
+                <label asp-for="CompanyName">Bedrijfsnaam</label>
+                <input asp-for="CompanyName" class="form-control" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Email">Email</label>
+                    <input asp-for="Email" type="text" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Tel">Telefoonnummer</label>
+                    <input asp-for="Tel" type="text" class="form-control" />
+                    <span asp-validation-for="Tel" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label asp-for="Salutation">Salutatie</label>
+                    <input asp-for="Salutation" type="text" class="form-control" />
+                    <span asp-validation-for="Salutation" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-5">
+                    <label asp-for="FirstName">Voornaam</label>
+                    <input asp-for="FirstName" type="text" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-5">
+                    <label asp-for="LastName">Achternaam</label>
+                    <input asp-for="LastName" type="text" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                    <label asp-for="Street">Straat</label>
+                    <input asp-for="Street" type="text" class="form-control" />
+                    <span asp-validation-for="Street" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="HouseNumber">Huisnummer</label>
+                    <input asp-for="HouseNumber" type="text" class="form-control" />
+                    <span asp-validation-for="HouseNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="HouseNumberAddition">Toevoeging</label>
+                    <input asp-for="HouseNumberAddition" type="text" class="form-control" />
+                    <span asp-validation-for="HouseNumberAddition" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label asp-for="CountryID">Land</label>
+                    <select asp-for="CountryID" class="form-control">
+                        <option>BE</option>
+                        <option>DE</option>
+                        <option>GB</option>
+                        <option>US</option>
+                    </select>
+                    <span asp-validation-for="CountryID" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="LanguageID">Taal</label>
+                    <select asp-for="LanguageID" class="form-control">
+                        <option>NL</option>
+                        <option>D</option>
+                        <option>F</option>
+                        <option>E</option>
+                    </select>
+                    <span asp-validation-for="LanguageID" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="City">Stad</label>
+                    <input asp-for="City" type="text" class="form-control" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="ZipCode">Postcode</label>
+                    <input asp-for="ZipCode" type="text" class="form-control" />
+                    <span asp-validation-for="ZipCode" class="text-danger"></span>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-rentmagic">Toevoegen</button>
+        </form>
+
+        <div>
+            <a asp-action="Overzicht">Terug naar Overzicht</a>
+        </div>
     </div>
 </body>
 </html>

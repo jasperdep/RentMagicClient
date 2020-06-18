@@ -3,8 +3,16 @@
     Layout = "../_Layout.cshtml";
 }
 
-<h1>Unit4 Home Page</h1>
-<p>
-    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Overzicht", "Unit4")'">Customers Unit4 Ophalen</button>
-    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Create", "Unit4")'">Customers Versturen</button>
-</p>
+<div class="container">
+
+    <div class="title">
+        <h1>Unit4 Multivers | Integratie</h1>
+    </div>
+    <div class="content">
+        <p>
+            <button type="button" class="btn btn-rentmagic" onclick="location.href='@Url.Action("Overzicht", "Unit4")'">Customers Unit4 Ophalen</button>
+            <button type="button" class="btn btn-rentmagic" onclick="location.href='@Url.Action("Create", "Unit4")'">Customer Versturen</button>
+        </p>
+    </div>
+
+</div>

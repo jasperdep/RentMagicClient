@@ -18,6 +18,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace RentMagicClient
 {
@@ -42,7 +43,7 @@ namespace RentMagicClient
                 config.DefaultSignInScheme = "ClientCookie";
                 //config.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 // use this to check if we are allowed to do something
-                config.DefaultChallengeScheme = "Unit4";
+                config.DefaultChallengeScheme = "Exact";
             })
                 .AddCookie("ClientCookie")
                 .AddOAuth("Unit4", config =>
@@ -80,7 +81,7 @@ namespace RentMagicClient
 
             services.AddHttpClient();
 
-            //services.AddControllersWithViews();
+            services.AddControllersWithViews();
 
             //services.AddControllers()
             //     .AddNewtonsoftJson(options =>
@@ -120,9 +121,11 @@ namespace RentMagicClient
             // }
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles();
+
             app.UseRouting();
 
-            app.UseCors();
+            //app.UseCors();
 
             //app.UseAntiforgeryToken();
 

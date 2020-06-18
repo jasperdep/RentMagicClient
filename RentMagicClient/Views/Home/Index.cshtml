@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Home | Prototype";
+    Layout = "../_Layout.cshtml";
+}
+
+<div class="container">
+
+    <div class="title">
+        <h1>Integraties</h1>
+    </div>
+
+    <div class="content">
+        <div class="subcontent">
+            <h2 class="special-title">Nieuwe Koppeling</h2>
+            <div class="row">
+                <div class="col-4">
+                    <div class="card">
+                        <img class="card-img-top" src="images/exact-logo.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Exact Online</h5>
+                            <p class="card-text">Koppel al uw klanten met Exact Online</p>
+                            <button type="button" class="btn btn-rentmagic" onclick="location.href='@Url.Action("Index", "Exact")'">Koppelen</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <img class="card-img-top" src="images/unit4-logo4.jpeg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Unit4 Multivers</h5>
+                            <p class="card-text">Koppel al uw klanten met Unit4</p>
+                            <button type="button" class="btn btn-rentmagic" onclick="location.href='@Url.Action("Index", "Unit4")'">Koppelen</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

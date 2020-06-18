@@ -88,16 +88,18 @@ namespace RentMagicClient
         {
             ExactOnlineCustomer exactOnlineCustomer = new ExactOnlineCustomer()
             {
+
                 ID = customer.CustomerID,
                 City = customer.City,
                 Name = customer.CompanyName,
                 Country = customer.CountryID,
                 Email = customer.Email,
-                AddressLine1 = customer.HouseNumber,
+                AddressLine1 = customer.Street + " " + customer.HouseNumber + customer.HouseNumberAddition,
                 Language = customer.LanguageID,
                 Phone = customer.Tel,
                 Postcode = customer.ZipCode,
-                State = customer.State
+                StateName = customer.State,
+                Status = "C"
             };
 
             return exactOnlineCustomer;
